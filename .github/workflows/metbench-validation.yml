@@ -19,6 +19,6 @@ jobs:
       - name: Install CPU PyTorch
         run: python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
       - name: Install framework and benchmark dependencies
-        run: python -m pip install -e . pytest -r vlmeval/dataset/metbench/requirements.txt
+        run: python -m pip install -e . pytest rouge-score -r vlmeval/dataset/metbench/requirements.txt
       - name: Run MET-Bench and framework regression tests
         run: python -m pytest tests/test_metbench.py tests/test_inference_api.py tests/test_text_dataset_display.py tests/test_dataset_alias.py -q
